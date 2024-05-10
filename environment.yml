@@ -26,8 +26,8 @@ dependencies:
   - yaml=0.2.5=h7b6447c_0
   - pip:
     - imgaug==0.4.0
-    - opencv-python==4.5.5.64
-    - opencv-python-headless==4.5.5.64
+    - opencv-python==4.6.0.66
+    - opencv-python-headless==4.6.0.66
     - openslide-python==1.2.0
     - seaborn==0.11.2
     - tensorboardx==2.5.1
