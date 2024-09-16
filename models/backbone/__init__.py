@@ -8,7 +8,7 @@ from .mobilenet import mobilenet_v2
 from .unet_encoder import UnetEncoder
 from .dsf_cnn import dsf_cnn_4, dsf_cnn_8, dsf_cnn_12
 # from .e2wrn import wrn16_2_stl_d8d8d8d8, wrn16_4_stl_d8d8d8d8, wrn16_4_stl_c8c8c8c8
-
+from .imagevit import build_sam_vit_b
 
 def get_backbone(backbone_name, pretrained=False):
     """Helper function to get backbone network."""
@@ -25,6 +25,7 @@ def get_backbone(backbone_name, pretrained=False):
         # "wrn16_2_stl_d8d8d8d8": wrn16_2_stl_d8d8d8d8,
         # "wrn16_4_stl_d8d8d8d8": wrn16_4_stl_d8d8d8d8,
         # "wrn16_4_stl_c8c8c8c8": wrn16_4_stl_c8c8c8c8,
+        "sam_encoder":build_sam_vit_b,
     }
     filter_info_dict = {
         "resnet18": [64, 64, 128, 256, 512],
@@ -39,6 +40,7 @@ def get_backbone(backbone_name, pretrained=False):
         "wrn16_2_stl_d8d8d8d8": [4, 8, 16, 32, 32],
         "wrn16_4_stl_d8d8d8d8": [4, 16, 32, 64, 64],
         "wrn16_4_stl_c8c8c8c8": [5, 22, 45, 90, 90],
+        "sam_encoder": [256, 256, 256, 256, 256],
     }
     gspace_dict = {
         # "wrn16_2_stl_d8d8d8d8": [
